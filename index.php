@@ -1,12 +1,9 @@
 <?php
 
-spl_autoload_register(function ($class_name) {
-    include $class_name . '.php';
-});
-
-use src\parenthesis;
+require_once __DIR__ . '/vendor/autoload.php';
 
 $string = "(()()()()))((((()()()))(()()()(((()))))))";
-var_dump(parenthesis::hasMatched($string));
+$match = \src\Parenthesis::hasMatched($string);
+var_dump($match);
 
 
